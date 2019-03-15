@@ -1,0 +1,13 @@
+#-*- coding:utf-8 -*-
+
+from selenium import webdriver
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+
+wd = webdriver.Chrome(executable_path='D:\学习文档\chromedriver.exe')
+wd.get('http://www.baidu.com')
+#inputelement = WebDriverWait(wd, timeout=10).until(EC.presence_of_all_elements_located((By.ID, 'kw')), message=u'元素加载超时')
+#inputelement.send_keys("美女")
+wd.find_elements_by_id('kw')[0].send_keys("12345")
+wd.find_elements_by_id('su')[0].click()
